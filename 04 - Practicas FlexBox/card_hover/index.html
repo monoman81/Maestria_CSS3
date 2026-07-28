@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Card Hover</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "Open Sans", sans-serif;
+            background-color: #222;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            width: 90%;
+        }
+
+        .card {
+            position: relative;
+            flex: 1 0 25%;
+            height: 350px;
+            overflow: hidden;
+            box-shadow: 0 5px 10px 5px rgba(0 0 0 / .5);
+        }
+
+        .img, .content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            transform: scaleX(0);
+            transition: transform .5s;
+            transform-origin: right;
+            transition-delay: .5s;
+        }
+
+        .card:hover .content::before {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .text {
+            z-index: 1;
+            padding: 30px;
+            transform: translateX(-100%);
+            transition: transform .5s;
+        }
+
+        .text h3 {
+            font-size: 1.8em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .card:hover .text {
+            transform: translateX(0);
+            transition-delay: 1s;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <div class="container">
+
+        <div class="card">
+            <div class="img">
+                <img src="img/image4.jpg" alt="">
+            </div>
+            <div class="content">
+                <div class="text">
+                    <h3>Titulo de post</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt debitis temporibus quibusdam quod possimus ullam beatae.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="img">
+                <img src="img/image5.jpg" alt="">
+            </div>
+
+            <div class="content">
+                <div class="text">
+                    <h3>Titulo de post</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt debitis temporibus quibusdam quod possimus ullam beatae.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="img">
+                <img src="img/image6.jpg" alt="">
+            </div>
+
+            <div class="content">
+                <div class="text">
+                    <h3>Titulo de post</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt debitis temporibus quibusdam quod possimus ullam beatae.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="img">
+                <img src="img/image7.jpg" alt="">
+            </div>
+
+            <div class="content">
+                <div class="text">
+                    <h3>Titulo de post</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt debitis temporibus quibusdam quod possimus ullam beatae.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="img">
+                <img src="img/image8.jpg" alt="">
+            </div>
+
+            <div class="content">
+                <div class="text">
+                    <h3>Titulo de post</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt debitis temporibus quibusdam quod possimus ullam beatae.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="img">
+                <img src="img/image9.jpg" alt="">
+            </div>
+
+            <div class="content">
+                <div class="text">
+                    <h3>Titulo de post</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt debitis temporibus quibusdam quod possimus ullam beatae.</p>
+                </div>
+            </div>
+        </div>
+</div>
+</body>
+</html>

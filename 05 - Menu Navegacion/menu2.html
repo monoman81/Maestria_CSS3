@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Menu Principal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Open Sans", sans-serif;
+            background-color: #24252A;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 30px 5%;
+        }
+
+        nav .logo,
+        nav .button {
+            flex: 1;
+        }
+
+        nav img {
+            width: 150px;
+        }
+
+        nav .button {
+            text-align: right;
+        }
+
+        nav .enlaces a {
+            position: relative;
+            padding: 0 20px;
+            text-decoration: none;
+            color: #edf0d1;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all .5s;
+        }
+
+        nav .enlaces a:hover {
+            color: #faaf38;
+        }
+
+        nav .enlaces a::before {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            width: 50%;
+            height: 2px;
+            background-color: #faaf38;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: all .5s;
+        }
+
+        nav .enlaces a:hover::before {
+            transform: scaleX(.9);
+        }
+
+        nav button {
+            padding: 10px 25px;
+            background-color: #faaf38;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            color: #edf0d1;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all .5s;
+        }
+
+        nav button:hover {
+            background-color: #c98520;
+        }
+
+    </style>
+
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="img/logo1.png" alt="logo">
+        </div>
+        <div class="enlaces">
+            <a href="#">Inicio</a>
+            <a href="#">Nosotros</a>
+            <a href="#">Blog</a>
+            <a href="#">Multimedia</a>
+            <a href="#">Contacto</a>
+        </div>
+        <div class="button">
+            <button>Ingresar</button>
+        </div>
+    </nav>
+
+</body>
+</html>

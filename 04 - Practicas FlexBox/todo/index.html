@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Todo List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "Open Sans", sans-serif;
+            background-color: #111;
+        }
+
+        .container {
+            background-color: #fff;
+            width: 350px;
+        }
+
+        h2 {
+            background-color: #03A9F4;
+            color: #fff;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 20px;
+        }
+
+        .list {
+            height: 500px;
+            overflow: auto;
+        }
+
+        .list::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        .list::-webkit-scrollbar-thumb {
+            background-color: #03A9F4;
+            border-radius: 40px;
+        }
+
+        .item {
+            padding: 20px;
+            border-bottom: 1px solid rgba(0 0 0 / .1);
+            transition: all .5s;
+        }
+
+        .item:last-child {
+            border-bottom: none;
+        }
+
+        .item:hover {
+            background-color: rgba(0 0 0 / .1);
+        }
+
+        .item label {
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .item p {
+            font-size: 18px;
+            letter-spacing: 1px;
+            font-weight: 400;
+        }
+
+        .item span {
+            position: relative;
+            width: 30px;
+            height: 30px;
+            border: 1px solid #8b8b8b;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .item span::before {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 5px;
+            border-left: 2px solid #8b8b8b;
+            border-bottom: 2px solid #8b8b8b;
+            transform: rotate(-45deg);
+        }
+
+        .item input {
+            display: none;
+        }
+
+        .item input:checked ~ p {
+            text-decoration: line-through;
+            color: #ccc;
+            font-weight: 600;
+        }
+
+        .item input:checked ~ span {
+            background-color: #03A9F4;
+            border: 1px solid #03A9F4;
+        }
+
+        .item input:checked ~ span::before {
+            border-color: #fff;
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <h2>To Do List</h2>
+        <div class="list">
+            <div class="item">
+                <label>
+                    <input type="checkbox" name="" id="">
+                    <p>Comer</p>
+                    <span></span>
+                </label>
+            </div>
+            <div class="item">
+                <label>
+                    <input type="checkbox">
+                    <p>Programar</p>
+                    <span></span>
+                </label>
+            </div>
+            <div class="item">
+                <label>
+                    <input type="checkbox" name="" id="">
+                    <p>Leer</p>
+                    <span></span>
+                </label>
+            </div>
+            <div class="item">
+                <label>
+                    <input type="checkbox" name="" id="">
+                    <p>Compras</p>
+                    <span></span>
+                </label>
+            </div>
+            <div class="item">
+                <label>
+                    <input type="checkbox" name="" id="">
+                    <p>Tareas</p>
+                    <span></span>
+                </label>
+            </div>
+            <div class="item">
+                <label>
+                    <input type="checkbox" name="" id="">
+                    <p>Ejercicio</p>
+                    <span></span>
+                </label>
+            </div>
+            <div class="item">
+                <label>
+                    <input type="checkbox" name="" id="">
+                    <p>Dormir</p>
+                    <span></span>
+                </label>
+            </div>
+            <div class="item">
+                <label>
+                    <input type="checkbox" name="" id="">
+                    <p>Estudiar</p>
+                    <span></span>
+                </label>
+            </div>
+            <div class="item">
+                <label>
+                    <input type="checkbox" name="" id="">
+                    <p>Meditar</p>
+                    <span></span>
+                </label>
+            </div>
+            <div class="item">
+                <label>
+                    <input type="checkbox" name="" id="">
+                    <p>Limpiar</p>
+                    <span></span>
+                </label>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

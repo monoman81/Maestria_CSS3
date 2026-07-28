@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Menu Lateral</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/24d0a550b8.js" crossorigin="anonymous"></script>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Open Sans", sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        nav {
+            width: 220px;
+            height: 100vh;
+            background-color: #eee;
+            border: 1px solid #dedede;
+            box-shadow: 0.125rem 0 0.55rem 1px rgba(0 0 0 / .08);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        nav .logo {
+            padding: 20px;
+            cursor: pointer;
+        }
+        nav img {
+            width: 100%;
+            transition: all .5s;
+        }
+
+        nav .logo:hover img {
+            transform: scale(.9);
+        }
+
+        nav .enlaces {
+            display: flex;
+            flex-direction: column;
+            flex: 0 1 80%;
+            padding: 40px 0;
+        }
+
+        nav .enlaces a {
+            height: 55px;
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            font-size: 1.2em;
+            color: #584871;
+            transition: all .5s;
+        }
+
+        nav .enlaces a:hover {
+            background-color: #ccc;
+        }
+
+        nav .enlaces .icono {
+            width: 45px;
+            color: #4d3b68;
+        }
+
+        nav .sociales {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px 30px 20px;
+        }
+
+        nav .sociales a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ff2753;
+            color: #fff;
+            transition: all .5s;
+        }
+
+        nav .sociales a:hover {
+            color: #ff2753;
+            background-color: transparent;
+            transform: scale(2);
+        }
+
+    </style>
+
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="img/logo2.png" alt="logo">
+        </div>
+        <div class="enlaces">
+            <a href="#"><i class="fas fa-home icono"></i>Inicio</a>
+            <a href="#"><i class="fas fa-blog icono"></i>Blog</a>
+            <a href="#"><i class="fas fa-users icono"></i>Nosotros</a>
+            <a href="#"><i class="fas fa-comment icono"></i>Testimonios</a>
+            <a href="#"><i class="fas fa-envelope icono"></i>Contacto</a>
+        </div>
+        <div class="sociales">
+            <a href="#"><i class="fab fa-facebook-f icono-soc"></i></a>
+            <a href="#"><i class="fab fa-twitter icono-soc"></i></a>
+            <a href="#"><i class="fab fa-instagram icono-soc"></i></a>
+        </div>
+    </nav>
+</body>
+</html>

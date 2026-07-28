@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Formulario de Contacto</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Open Sans", sans-serif;
+        }
+
+        section {
+            height: 100vh;
+            background: #112D42;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        section::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            background-color: #03A9F4;
+        }
+
+        .container {
+            z-index: 1;
+            position: relative;
+            width: 1100px;
+            height: 550px;
+            display: flex;
+            background-color: transparent;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .info {
+            position: absolute;
+            top: 40px;
+            width: 360px;
+            height: calc(100% - 80px);
+            background-color: #0F3959;
+            z-index: 1;
+            padding: 40px 20px 40px 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 10px 5px 30px rgba(0 0 0 / .5);
+        }
+
+        .info h2 {
+            color: #fff;
+        }
+
+        .info-text {
+            margin: 20px 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .item {
+            display: flex;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .item svg {
+            flex-shrink: 0;
+            stroke: rgba(255 255 255 / .5);
+            transition: all .2s;
+        }
+
+        .item:hover svg {
+            stroke: rgba(255 255 255 / 1);
+        }
+
+        .item span {
+            color: rgba(255 255 255 / .5);
+            transition: all .2s;
+        }
+
+        .item:hover span {
+            color: rgba(255 255 255 / 1);
+        }
+
+        .sociales {
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .sociales a {
+            text-decoration: none;
+        }
+
+        .sociales a svg {
+            width: 30px;
+            height: 30px;
+            stroke: rgba(255 255 255 / .5);
+            transition: all .2s;
+        }
+
+        .sociales a:hover svg {
+            stroke: rgba(255 255 255 / 1);
+        }
+
+        .form {
+            position: absolute;
+            width: calc(100% - 200px);
+            height: 100%;
+            background-color: #fff;
+            margin-left: 150px;
+            padding: 70px 50px 70px 250px;
+            box-shadow: 0 0 30px rgba(0 0 0 / .5);
+        }
+
+        .form h2 {
+            color: #0F3959;
+        }
+
+        .form-box {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding-top: 30px;
+        }
+
+        .input-box {
+            position: relative;
+            margin-bottom: 35px;
+        }
+
+        .input-box.w50 {
+            width: 48%;
+        }
+
+        .input-box.w100 {
+            width: 100%;
+        }
+
+        .input-box input,
+        .input-box textarea {
+            width: 100%;
+            padding: 5px 0;
+            font-size: 18px;
+            color: #333;
+            border: none;
+            border-bottom: 1px solid #777;
+            outline: none;
+            resize: none;
+        }
+
+        .input-box textarea {
+            min-height: 120px;
+        }
+
+        .input-box span {
+            position: absolute;
+            left: 0;
+            padding: 5px 0;
+            font-size: 16px;
+            letter-spacing: 1px;
+            color: #888;
+            transition: all .2s;
+            pointer-events: none;
+        }
+
+        .input-box input:focus ~ span,
+        .input-box input:valid ~ span,
+        .input-box textarea:focus ~ span,
+        .input-box textarea:valid ~ span {
+            transform: translateY(-20px);
+            font-size: 14px;
+            font-weight: 400;
+            color: #03a9f4;
+        }
+
+        .input-box.btn {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .input-box input[type="submit"] {
+            cursor: pointer;
+            background-color: #0F3959;
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: #fff;
+            border: none;
+            width: 30%;
+            padding: 12px;
+            transition: all .5s;
+        }
+
+        .input-box input[type="submit"]:hover {
+            background-color: #03A9F4;
+        }
+
+    </style>
+
+</head>
+<body>
+    <section>
+        <div class="container">
+            <div class="info">
+                <div class="content">
+                    <h2>Información de contacto</h2>
+
+                    <div class="info-text">
+                        <div class="item">
+                            <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="#000000"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                            >
+                                <path d="M12 9.5m-2.5 0a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0 -5 0" />
+                                <path d="M6.428 12.494l7.314 -9.252" />
+                                <path d="M10.002 7.935l-2.937 -2.545" />
+                                <path d="M17.693 6.593l-8.336 9.979" />
+                                <path d="M17.591 6.376c.472 .907 .715 1.914 .709 2.935a7.263 7.263 0 0 1 -.72 3.18a19.085 19.085 0 0 1 -2.089 3c-.784 .933 -1.49 1.93 -2.11 2.98c-.314 .62 -.568 1.27 -.757 1.938c-.121 .36 -.277 .591 -.622 .591c-.315 0 -.463 -.136 -.626 -.593a10.595 10.595 0 0 0 -.779 -1.978a18.18 18.18 0 0 0 -1.423 -2.091c-.877 -1.184 -2.179 -2.535 -2.853 -4.071a7.077 7.077 0 0 1 -.621 -2.967a6.226 6.226 0 0 1 1.476 -4.055a6.25 6.25 0 0 1 4.811 -2.245a6.462 6.462 0 0 1 1.918 .284a6.255 6.255 0 0 1 3.686 3.092z" />
+                            </svg>
+
+                            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident doloremque neque.</span>
+                        </div>
+
+                        <div class="item">
+                            <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="#000000"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                            >
+                                <path d="M3 4m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" />
+                                <path d="M7 8h10" />
+                                <path d="M7 12h10" />
+                                <path d="M7 16h10" />
+                            </svg>
+
+                            <span>loremimpsum@gmail.com</span>
+                        </div>
+
+                        <div class="item">
+                            <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="#000000"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                            >
+                                <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
+                            </svg>
+
+                            <span>+00 123 456</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sociales">
+                    <a href="">
+                        <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="40"
+                                height="40"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="#000000"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                        >
+                            <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" />
+                        </svg>
+                    </a>
+                    <a href="">
+                        <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="40"
+                                height="40"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="#000000"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                        >
+                            <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c0 -.249 1.51 -2.772 1.818 -4.013z" />
+                        </svg>
+                    </a>
+                    <a href="">
+                        <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="40"
+                                height="40"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="#000000"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                style="pointer-events: none;"
+                        >
+                            <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" />
+                            <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+                            <path d="M16.5 7.5l0 .01" />
+                        </svg>
+                    </a>
+                    <a href="">
+                        <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="40"
+                                height="40"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="#000000"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                        >
+                            <path d="M2 8a4 4 0 0 1 4 -4h12a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-12a4 4 0 0 1 -4 -4v-8z" />
+                            <path d="M10 9l5 3l-5 3z" />
+                        </svg>
+                    </a>
+                    <a href="">
+                        <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="40"
+                                height="40"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="#000000"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                        >
+                            <path d="M20.945 11a9 9 0 1 1 -3.284 -5.997l-2.655 2.392a5.5 5.5 0 1 0 2.119 6.605h-4.125v-3h7.945z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="form">
+                <h2>Comunicate con nosotros</h2>
+
+                <div class="form-box">
+                    <div class="input-box w50">
+                        <input type="text" required>
+                        <span>Nombre</span>
+                    </div>
+
+                    <div class="input-box w50">
+                        <input type="text" required>
+                        <span>Apellido</span>
+                    </div>
+
+                    <div class="input-box w50">
+                        <input type="text" required>
+                        <span>Email</span>
+                    </div>
+
+                    <div class="input-box w50">
+                        <input type="text" required>
+                        <span>Telefono</span>
+                    </div>
+
+                    <div class="input-box w100">
+                        <textarea required></textarea>
+                        <span>Escribe tu mensaje...</span>
+                    </div>
+
+                    <div class="input-box w100 btn">
+                        <input type="submit" value="Enviar">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+</body>
+</html>
