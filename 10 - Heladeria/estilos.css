@@ -1,0 +1,402 @@
+@import url(https://fonts.googleapis.com/css?family=Teko:300,regular,500,600,700);
+@import url(https://fonts.googleapis.com/css?family=Dancing+Script:regular,500,600,700);
+
+/** VARIABLES  */
+:root{
+    --font-principal: 'Teko';
+    --font-cursiva: 'Dancing Script';
+    --gris600: #2F2E2E;
+    --gris200: #706D6D;
+}
+
+/** GENERALES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--gris600);
+}
+
+
+
+a{
+    text-decoration: none;
+}
+
+h1, h2{
+    font-family: var(--font-principal);
+}
+
+h3{
+    font-family: var(--font-cursiva);
+}
+
+/******** Scrollbar *****/
+body::-webkit-scrollbar {
+    width: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #f7ca37;
+    border-radius: 50px;
+}
+
+/*** TEXT CONTENT ***/
+.text-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+}
+
+/*** TEXT CONTENT FULL ***/
+
+.text-content.full {
+    grid-column: span 12;
+}
+
+.text-content.full h1,
+.text-content.full h2 {
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.text-content.full h1 {
+    font-size: 115px;
+    letter-spacing: 20px;
+    line-height: 1.5;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.text-content.full h2 {
+    font-size: 50px;
+    letter-spacing: 2px;
+    font-weight: 100;
+    line-height: 0.1;
+}
+
+/*** TEXT CONTENT LATERAL ***/
+.text-content.lateral {
+    padding: 0 50px;
+}
+
+.text-content.lateral h1 {
+    font-size: 55px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    line-height: 1;
+    text-align: center;
+}
+
+.text-content.lateral h3 {
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.text-content.lateral p {
+    font-size: 20px;
+    margin: 20px 0;
+    text-align: center;
+    letter-spacing: .5px;
+}
+
+
+/** BOTONES */
+.btn{
+    background: transparent;
+    width: 130px;
+    height: 42px;
+    font-size: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+.btn.light{
+    color:  #FFF;
+    border: 2px solid #FFF;
+}
+
+.btn.dark{
+    color:  var(--gris600);
+    border: 2px solid var(--gris600);
+}
+
+.btn:hover{
+    background: var(--gris600);
+    border: 2px solid var(--gris600);
+    color:  #FFF;
+}
+
+/*** GRID ***/
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: auto;
+    height: 100%;
+}
+
+.container-center {
+    width: 85%;
+    margin: 0 auto;
+}
+
+.span2 {
+    grid-column: span 2;
+}
+
+.span6 {
+    grid-column: span 6;
+}
+
+.span10 {
+    grid-column: span 10;
+}
+
+/* SECCIONES */
+section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+/*** NAVEGACION ***/
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: rgb(249 219 121 / .745);
+    z-index: 3;
+}
+
+nav .grid {
+    justify-items: start;
+    align-items: center;
+}
+
+nav .enlaces {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav .enlaces a {
+    margin-right: 20px;
+    font-family: var(--font-principal);
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all .5s ease;
+}
+
+nav .enlaces a:hover {
+    color: var(--gris200);
+}
+
+/***** Sociales ********/
+.sociales {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.sociales a {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    transition: all .5s ease;
+}
+
+.sociales a:hover,
+.sociales a:focus-visible {
+    background-color: var(--gris200);
+}
+
+.sociales a svg path {
+    fill: #fff;
+}
+
+/**** HEADER ****/
+header {
+    position: relative;
+    height: calc(100vh + 50px);
+    background-color: #f9db79;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("img/image1.webp") center no-repeat;
+}
+
+header .grid {
+    justify-items: center;
+    align-items: center;
+}
+
+header .text-content {
+    padding: 200px 0 0 0;
+}
+
+header .text-content h3 {
+    position: absolute;
+    right: 0;
+    bottom: 50px;
+    font-size: 50px;
+    font-weight: 700;
+    color: #000;
+}
+
+/*** SABORES ***/
+.sabores .background {
+    background: url("img/image2.webp") no-repeat right / cover;
+}
+
+.sabores .lateral {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/*** ESPECIAL ***/
+.especial {
+    background-color: #b5e8d5;
+}
+
+.especial::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("img/image3.webp") fixed center;
+}
+
+/*** LUGAR ****/
+.lugar .background {
+    background: url("img/image4.webp") no-repeat right / cover;
+}
+
+/*** EVENTOS ***/
+.eventos {
+    background-color: #FFBFB3;
+}
+
+.eventos::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("img/image5.webp") fixed center;
+}
+
+.eventos .btn {
+    width: 200px;
+}
+
+/*** POSTRES ****/
+.postres .background {
+    background: url("img/image6.webp") no-repeat right / cover;
+}
+
+/*** HELADOs***/
+.helado {
+    background: url("img/image7.webp") fixed no-repeat, #b5e8d5;
+    background-size: cover;
+    display: flex;
+    height: 115vh;
+}
+
+.helado img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/******* Footer ******/
+footer {
+    height: 400px;
+}
+
+footer .grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    justify-items: center;
+    align-content: center;
+}
+
+footer h2 {
+    font-size: 28px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+footer p,
+footer ul,
+footer input {
+    margin: 10px 0;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer ul li a:hover {
+    text-decoration: underline;
+}
+
+footer input {
+    width: 100%;
+    height: 40px;
+    padding: 0 20px;
+}
+
+footer input::placeholder {
+    letter-spacing: 1px;
+    color: var(--gris600);
+}
+
+footer .btn {
+    width: 100%;
+}
+
+footer .sociales {
+    justify-content: flex-start;
+}
+
+/*** Copyright ***/
+.copy {
+    height: 35px;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.copy p {
+    color: rgb(255 255 255 / .5);
+    font-size: 14px;
+    font-weight: 600;
+}
